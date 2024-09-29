@@ -10,5 +10,5 @@ interface MessageInterface
 
     public function send(): static;
 
-    public function routedTo(?string $routedTo = null);
+    public function routedTo(?string $routedTo): static;
 }

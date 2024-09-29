@@ -43,7 +43,7 @@ abstract class Message implements MessageInterface
         return $this;
     }
 
-    public function setRoutedTo(string $routedTo): static
+    public function routedTo(?string $routedTo): static
     {
         $this->routedTo = $routedTo;
 
