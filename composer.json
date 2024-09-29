@@ -30,10 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Techlove\\FortySixElks\\Notifications\\Test\\": "tests",
-            "Workbench\\App\\": "workbench/app/",
-            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
-            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+            "Techlove\\FortySixElks\\Notifications\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -58,6 +55,14 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
+        }
+    },
+    "laravel": {
+        "providers": [
+            "Techlove\\FortySixElks\\Notifications\\FortySixElksNotificationsProvider"
+        ],
+        "aliases": {
+            "ElksMessage": "Techlove\\FortySixElks\\Notifications\\FortySixElks"
         }
     }
 }
