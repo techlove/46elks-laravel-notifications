@@ -57,14 +57,14 @@ abstract class Message implements MessageInterface
         return $this;
     }
 
-    public function addLines(array $lines): static
+    public function lines(array $lines): static
     {
         $this->lines = array_merge($this->lines, $lines);
 
         return $this;
     }
 
-    public function addLine(string $line): static
+    public function line(string $line): static
     {
         $this->lines[] = $line;
 

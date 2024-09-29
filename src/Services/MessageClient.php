@@ -71,7 +71,7 @@ class MessageClient
         $this->client = Http::createPendingRequest()
             ->baseUrl(self::BASE_URL)
             ->withBasicAuth($this->username, $this->password)
-            ->bodyFormat('form')
+            ->bodyFormat('form_params')
             ->contentType('application/x-www-form-urlencoded');
     }
 }
