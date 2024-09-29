@@ -60,7 +60,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Techlove\\FortySixElks\\Notifications\\FortySixElksNotificationsProvider"
+                "Techlove\\FortySixElks\\Notifications\\ServiceProvider"
             ],
             "aliases": {
                 "ElksMessage": "Techlove\\FortySixElks\\Notifications\\FortySixElks"

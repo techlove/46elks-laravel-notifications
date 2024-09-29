@@ -2,7 +2,7 @@
 
 namespace Techlove\FortySixElks\Notifications;
 
-class FortySixElksNotificationsProvider extends \Illuminate\Support\ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function register(): void
     {
@@ -10,7 +10,7 @@ class FortySixElksNotificationsProvider extends \Illuminate\Support\ServiceProvi
             return new Factory\MessageFactory();
         });
 
-        $this->app->bind('techlove-46elks-notifications-client', function () {
+        $this->app->bind(Services\MessageClient::class, function () {
             return new Services\MessageClient(
                 config('services.46elks.username'),
                 config('services.46elks.password')

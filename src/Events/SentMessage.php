@@ -8,6 +8,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Http\Client\Response;
 use Illuminate\Queue\SerializesModels;
 use Techlove\FortySixElks\Notifications\Messages\MessageInterface;
 
@@ -18,7 +19,7 @@ class SentMessage
     /**
      * Create a new event instance.
      */
-    public function __construct(public MessageInterface $message, public array $response)
+    public function __construct(public MessageInterface $message, public Response $response)
     {
     }
 
