@@ -57,12 +57,14 @@
             "pestphp/pest-plugin": true
         }
     },
-    "laravel": {
-        "providers": [
-            "Techlove\\FortySixElks\\Notifications\\FortySixElksNotificationsProvider"
-        ],
-        "aliases": {
-            "ElksMessage": "Techlove\\FortySixElks\\Notifications\\FortySixElks"
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Techlove\\FortySixElks\\Notifications\\FortySixElksNotificationsProvider"
+            ],
+            "aliases": {
+                "ElksMessage": "Techlove\\FortySixElks\\Notifications\\FortySixElks"
+            }
         }
     }
 }
