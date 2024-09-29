@@ -1,0 +1,63 @@
+{
+    "name": "techlove/46elks-laravel-notifications",
+    "version": "0.0.1",
+    "description": "Clean and simple Laravel notification channel for 46Elks.",
+    "homepage": "https://github.com/techlove/46elks-laravel-notifications",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oliver Scase",
+            "email": "oliver@techlove.se",
+            "homepage": "https://techlove.se",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/http": "~10.0 || ^11.0",
+        "illuminate/events": "~10.0 || ^11.0",
+        "illuminate/notifications": "~10.0 || ^11.0",
+        "illuminate/support": "~10.0 || ^11.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Techlove\\FortySixElks\\Notifications\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Techlove\\FortySixElks\\Notifications\\Test\\": "tests",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@build",
+            "@php vendor/bin/testbench serve --ansi"
+        ],
+        "lint": [
+            "@php vendor/bin/phpstan analyse --verbose --ansi"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
