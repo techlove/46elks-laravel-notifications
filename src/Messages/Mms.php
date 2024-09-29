@@ -2,13 +2,23 @@
 
 namespace Techlove\FortySixElks\Notifications\Messages;
 
+use Techlove\FortySixElks\Notifications\Services\MessageClient;
+
 class Mms extends Message
 {
     protected ?string $image = null;
 
+    public function __construct(MessageClient $client)
+    {
+        parent::__construct($client);
+
+        $this->client->getBaseClient()->bodyFormat('multipart');
+        $this->client->getBaseClient()->contentType('multipart/form-data');
+    }
+
     public function getEndpoint(): string
     {
-        return 'mms';
+        return '/mms';
     }
 
     /**

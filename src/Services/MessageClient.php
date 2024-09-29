@@ -61,11 +61,17 @@ class MessageClient
         return $this;
     }
 
+    public function getBaseClient(): PendingRequest
+    {
+        return $this->client;
+    }
+
     protected function buildClient(): void
     {
         $this->client = Http::createPendingRequest()
             ->baseUrl(self::BASE_URL)
             ->withBasicAuth($this->username, $this->password)
+            ->bodyFormat('form')
             ->contentType('application/x-www-form-urlencoded');
     }
 }

@@ -99,6 +99,6 @@ class Sms extends Message
 
     protected function getEndpoint(): string
     {
-        return 'sms';
+        return '/sms';
     }
 }
